@@ -7,7 +7,7 @@ import Carousel from "../Carousel/Carousel";
 
 const AlbumGrid = ({ title, apiUrl }) => {
   const [albums, setAlbums] = useState([]);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   
   useEffect(() => {
@@ -32,7 +32,7 @@ const AlbumGrid = ({ title, apiUrl }) => {
        sx={{ textTransform: "none", color: "green" }}
          >
          <Typography sx={{ textTransform: "none" }}>
-         {collapsed ? "Collapse" : "Show All"}
+         {collapsed ? "Show All" : "Collapse"}
         </Typography>
         </Button>
       </div>

@@ -32,7 +32,7 @@ const AlbumGrid = ({ title, apiUrl }) => {
        sx={{ textTransform: "none", color: "green" }}
          >
          <Typography sx={{ textTransform: "none" }}>
-        {collapsed ? "Show All" : "Collapse"}
+         {collapsed ? "Collapse" : "Show All"}
         </Typography>
         </Button>
       </div>

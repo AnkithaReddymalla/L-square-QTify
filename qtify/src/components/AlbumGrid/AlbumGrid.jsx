@@ -9,7 +9,7 @@ import Carousel from "../Carousel/Carousel";
 const AlbumGrid = ({ title, apiUrl }) => {
   const [albums, setAlbums] = useState([]);
   const [collapsed, setCollapsed] = useState(false);
-
+  
   useEffect(() => {
     const fetchAlbums = async () => {
       try {
@@ -26,8 +26,14 @@ const AlbumGrid = ({ title, apiUrl }) => {
     <div style={{ margin: "20px 0" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "16px" }}>
         <Typography variant="h6">{title}</Typography>
-        <Button variant="text" onClick={() => setCollapsed(!collapsed)} sx={{ textTransform: "none", color: "green" }}>
-          {collapsed ? "Show All" : "Collapse"}
+        <Button
+       variant="text"
+       onClick={() => setCollapsed(!collapsed)}
+       sx={{ textTransform: "none", color: "green" }}
+         >
+         <Typography sx={{ textTransform: "none" }}>
+        {collapsed ? "Show All" : "Collapse"}
+        </Typography>
         </Button>
       </div>
 

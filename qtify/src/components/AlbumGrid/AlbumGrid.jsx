@@ -9,6 +9,7 @@ import Carousel from "../Carousel/Carousel";
 const AlbumGrid = ({ title, apiUrl }) => {
   const [albums, setAlbums] = useState([]);
   const [collapsed, setCollapsed] = useState(false);
+
   
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -38,16 +39,24 @@ const AlbumGrid = ({ title, apiUrl }) => {
       </div>
 
       {collapsed ? (
-        <Carousel items={albums} renderItem={(album) => <AlbumCard album={album} />} />
-      ) : (
-        <Grid container spacing={2}>
-          {albums.map((album) => (
-            <Grid item key={album.id} md={2}>
-              <AlbumCard album={album} />
-            </Grid>
-          ))}
-        </Grid>
-      )}
+  <Carousel
+    items={albums}
+    renderItem={(album) => <AlbumCard album={album} />}
+  />
+) : (
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", // force 7 columns
+      gap: "16px",
+    }}
+  >
+    {albums.map((album) => (
+      <AlbumCard key={album.id} album={album} />
+    ))}
+  </div>
+)}
+
     </div>
   );
 };

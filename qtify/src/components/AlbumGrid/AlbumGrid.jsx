@@ -26,7 +26,7 @@ const AlbumGrid = ({ title, apiUrl }) => {
     <div style={{ margin: "20px 0" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "16px" }}>
         <Typography variant="h6">{title}</Typography>
-        <Button variant="text" onClick={() => setCollapsed(!collapsed)}>
+        <Button variant="text" onClick={() => setCollapsed(!collapsed)} sx={{ textTransform: "none", color: "green" }}>
           {collapsed ? "Show All" : "Collapse"}
         </Button>
       </div>
